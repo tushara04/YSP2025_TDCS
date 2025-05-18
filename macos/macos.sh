@@ -35,7 +35,7 @@ brew --version
 # Ensure zsh config files have Homebrew env setup
 BREW_ENV_LINE='eval "$(/opt/homebrew/bin/brew shellenv)"'
 
-for file in "$HOME/.zshrc" "$HOME/.zprofile" "$HOME/.zshenv"; do
+for file in "./.zshrc" "./.zshenv"; do
   if [ ! -f "$file" ]; then
     touch "$file"
     echo "[INFO] Created $file"
@@ -48,10 +48,10 @@ for file in "$HOME/.zshrc" "$HOME/.zprofile" "$HOME/.zshenv"; do
 done
 
 # Source ~/.zshrc to make brew immediately available in this shell
-if [ -f "$HOME/.zshrc" ]; then
+if [ -f "./.zshrc" ]; then
   # shellcheck disable=SC1090
-  source "$HOME/.zshrc"
-  echo "[INFO] Sourced ~/.zshrc"
+  source "./.zshrc"
+  echo "[INFO] Sourced ./.zshrc"
 fi
 
 # Install ipython and ipykernel using brew
