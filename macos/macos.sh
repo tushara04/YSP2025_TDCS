@@ -1,7 +1,5 @@
 #!/usr/bin/env bash
 
-# Credits: Mathias Bynens (https://mths.be/macos)
-
 # Close any open System Preferences panes to prevent them from overriding settings
 osascript -e 'Tell Application "System Preferences" to quit'
 
@@ -11,7 +9,7 @@ sudo -v
 # Keep-alive: update existing `sudo` timestamp until this script finishes
 while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
 
-# Ensure Homebrew is in PATH for Apple Silicon or Intel Macs
+# Detect architecture and add Homebrew to PATH
 if [ -d /opt/homebrew/bin ]; then
     export PATH="/opt/homebrew/bin:$PATH"
     echo '[INFO] Added /opt/homebrew/bin to PATH (Apple Silicon).'
@@ -32,30 +30,37 @@ fi
 echo "[INFO] Using Homebrew at: $(which brew)"
 brew --version
 
-# Ensure zsh config files have Homebrew env setup
+# Set Homebrew shellenv line
 BREW_ENV_LINE='eval "$(/opt/homebrew/bin/brew shellenv)"'
+USER_HOME=$(eval echo ~"$SUDO_USER")
 
-for file in "$HOME/.zshrc" "$HOME/.zprofile" "$HOME/.zshenv"; do
-  if [ ! -f "$file" ]; then
-    touch "$file"
-    echo "[INFO] Created $file"
-  fi
+for file in ".zshrc" ".zprofile" ".zshenv"; do
+    full_path="$USER_HOME/$file"
+    if [ ! -f "$full_path" ]; then
+        touch "$full_path" || { echo "[ERROR] Could not create $full_path"; continue; }
+        echo "[INFO] Created $full_path"
+    fi
 
-  if ! grep -Fxq "$BREW_ENV_LINE" "$file"; then
-    echo "$BREW_ENV_LINE" >> "$file"
-    echo "[INFO] Added Homebrew setup line to $file"
-  fi
+    if ! grep -Fxq "$BREW_ENV_LINE" "$full_path"; then
+        echo "$BREW_ENV_LINE" >> "$full_path" || echo "[ERROR] Failed to write to $full_path"
+        echo "[INFO] Added Homebrew setup line to $full_path"
+    fi
 done
 
-# Source ~/.zshrc to make brew immediately available in this shell
-if [ -f "$HOME/.zshrc" ]; then
-  # shellcheck disable=SC1090
-  source "$HOME/.zshrc"
-  echo "[INFO] Sourced ~/.zshrc"
+# Try to source user's zshrc if it exists
+if [ -f "$USER_HOME/.zshrc" ]; then
+    # shellcheck disable=SC1090
+    source "$USER_HOME/.zshrc"
+    echo "[INFO] Sourced $USER_HOME/.zshrc"
 fi
 
-# Install ipython and ipykernel using brew
-echo '[INFO] Installing ipython and ipykernel using brew...'
-brew install ipython ipykernel
+# Install ipython and ipykernel using pip3
+if command -v pip3 >/dev/null 2>&1; then
+    echo '[INFO] Installing ipython and ipykernel using pip3...'
+    pip3 install --user ipython ipykernel
+else
+    echo '[ERROR] pip3 not found. Please install Python 3 first.'
+    exit 1
+fi
 
 echo '[SUCCESS] macos.sh completed.'
