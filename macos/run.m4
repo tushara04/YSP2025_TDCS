@@ -49,21 +49,6 @@ install_core_dependencies() {
 
     log_info "Updating and upgrading Homebrew..."
     brew update && brew upgrade
-
-    log_info "Installing and starting Docker..."
-    brew install --cask docker
-    open /Applications/Docker.app
-    until docker stats --no-stream &> /dev/null; do
-        echo -e "${YELLOW}[INFO] Waiting for Docker to launch...${NC}"
-        sleep 5
-    done
-    log_success "Docker is running."
-
-    log_info "Creating working directory and config folders..."
-    mkdir -p "$HOME/Documents/wd"
-    ln -sfn "$HOME/Documents/wd" "$HOME/wd"
-    mkdir -p "$HOME/.gnupg" "$HOME/.config/spicetify"
-    log_success "Directories ready."
 }
 
 setup_environment_and_shell() {
@@ -71,31 +56,16 @@ setup_environment_and_shell() {
     brew tap homebrew/bundle
     brew bundle --file ./Brewfile
     log_success "Brew packages installed."
-
-    # Restart launchd services for tools like sketchybar/yabai/skhd if needed
-    yabai --restart-service
-    skhd --restart-service
-    log_success "Shell environment ready."
-}
-
-apply_macos_configurations() {
-    echo -e "${YELLOW}[INFO] Applying macOS configurations...${NC}"
-    source "$DIR/macos.sh"
-    log_success "macOS configuration applied."
 }
 
 if [ "$flag_update" = on ]; then
     setup_environment_and_shell
-elif [ "$flag_config" = on ]; then
-    apply_macos_configurations
 elif [ "$flag_install" = on ]; then
     install_core_dependencies
     setup_environment_and_shell
-    apply_macos_configurations
 else
     install_core_dependencies
     setup_environment_and_shell
-    apply_macos_configurations
 fi
 
 # ] <-- needed because of Argbash
