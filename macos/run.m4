@@ -57,15 +57,29 @@ setup_environment_and_shell() {
     brew bundle --file ./Brewfile
     log_success "Brew packages installed."
 }
+# Applies user-preferred configurations and settings to MacOS.
+function apply_macos_configurations() {
+    # Set macOS preferences - we will run this last because this will reload the shell
+    echo -e "\\n${YELLOW}[INFO] Applying MacOS configurations...${NC}"
 
+    source "$DIR/macos.sh"
+    log_success "MacOS configurations applied."
+}
+
+# Check the provided options and perform the corresponding actions
 if [ "$flag_update" = on ]; then
     setup_environment_and_shell
+elif [ "$flag_config" = on ]; then
+    apply_macos_configurations
 elif [ "$flag_install" = on ]; then
     install_core_dependencies
     setup_environment_and_shell
+    apply_macos_configurations
 else
+    # Same behaviour as `$flag_install` now; can be extended later
     install_core_dependencies
     setup_environment_and_shell
+    apply_macos_configurations
 fi
 
 # ] <-- needed because of Argbash
