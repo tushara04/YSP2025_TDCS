@@ -53,7 +53,6 @@ install_core_dependencies() {
 
 setup_environment_and_shell() {
     echo -e "${YELLOW}[INFO] Installing packages from Brewfile...${NC}"
-    brew tap homebrew/bundle
     brew bundle --file ./Brewfile
     log_success "Brew packages installed."
 }
