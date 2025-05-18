@@ -1,0 +1,3 @@
+notebook            # Backend Jupyter server
+ipykernel           # Kernel for running Python code in notebooks
+jupyterlab          # Optional, useful for more advanced Jupyter features
