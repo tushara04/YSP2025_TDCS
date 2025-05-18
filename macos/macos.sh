@@ -2,14 +2,13 @@
 
 # Credits: Mathias Bynens (https://mths.be/macos)
 
-# Close any open System Preferences panes, to prevent them from overriding
-# settings we’re about to change
+# Close any open System Preferences panes to prevent them from overriding settings
 osascript -e 'Tell Application "System Preferences" to quit'
 
 # Ask for the administrator password upfront
 sudo -v
 
-# Keep-alive: update existing `sudo` time stamp until `.macos` has finished
+# Keep-alive: update existing `sudo` timestamp until this script finishes
 while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
 
 # Ensure Homebrew is in PATH for Apple Silicon or Intel Macs
@@ -33,13 +32,30 @@ fi
 echo "[INFO] Using Homebrew at: $(which brew)"
 brew --version
 
-# Install ipython and ipykernel using pip3
-if command -v pip3 >/dev/null 2>&1; then
-    echo '[INFO] Installing ipython and ipykernel using pip3...'
-    pip3 install --user ipython ipykernel
-else
-    echo '[ERROR] pip3 not found. Please install Python 3 first.'
-    exit 1
+# Ensure zsh config files have Homebrew env setup
+BREW_ENV_LINE='eval "$(/opt/homebrew/bin/brew shellenv)"'
+
+for file in "$HOME/.zshrc" "$HOME/.zprofile" "$HOME/.zshenv"; do
+  if [ ! -f "$file" ]; then
+    touch "$file"
+    echo "[INFO] Created $file"
+  fi
+
+  if ! grep -Fxq "$BREW_ENV_LINE" "$file"; then
+    echo "$BREW_ENV_LINE" >> "$file"
+    echo "[INFO] Added Homebrew setup line to $file"
+  fi
+done
+
+# Source ~/.zshrc to make brew immediately available in this shell
+if [ -f "$HOME/.zshrc" ]; then
+  # shellcheck disable=SC1090
+  source "$HOME/.zshrc"
+  echo "[INFO] Sourced ~/.zshrc"
 fi
+
+# Install ipython and ipykernel using brew
+echo '[INFO] Installing ipython and ipykernel using brew...'
+brew install ipython ipykernel
 
 echo '[SUCCESS] macos.sh completed.'
