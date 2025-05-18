@@ -56,6 +56,6 @@ fi
 
 # Install ipython and ipykernel using brew
 echo '[INFO] Installing ipython and ipykernel using brew...'
-brew install ipython ipykernel
+brew install ipython
 
 echo '[SUCCESS] macos.sh completed.'
