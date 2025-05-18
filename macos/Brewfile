@@ -1,0 +1,14 @@
+# command line interface (CLI) tools
+brew "git"
+brew "node"
+brew "python@3.12"
+
+# graphical user interface (GUI) tools
+cask "visual-studio-code"
+
+# vscode extensions
+vscode "ms-python.python"
+vscode "ms-python.vscode-pylance"
+vscode "ms-toolsai.jupyter"
+vscode "ms-vscode.vscode-serial-monitor"
+vscode "dbaeumer.vscode-eslint"
