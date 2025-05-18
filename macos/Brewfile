@@ -10,3 +10,7 @@ vscode "ms-python.python"
 vscode "ms-python.vscode-pylance"
 vscode "ms-toolsai.jupyter"
 vscode "ms-vscode.vscode-serial-monitor"
+
+postinstall do
+  system "pip 3 install ipykernel ipython"
+end
