@@ -4,6 +4,7 @@
   <p>This guide is designed to help you install some applications you will need for the class exercises over the next seven days. Follow the instructions below. If you get stuck, reach out to your instructors.</p>
 </div>
 ---
+
 ## Instructions
 First, identify your computer's operation system (OS). Click on whatever OS you are running on:
 1. Windows
