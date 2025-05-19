@@ -7,8 +7,8 @@
 ---
 ## Instructions
 First, identify your computer's operation system (OS). Click on whatever OS you are running on:
-1. [Windows](###Windows)
-2. [MacOS](https://github.com/tushara04/YSP_Day1/blob/main/README.md#macos)
+1. [Windows](#windows)
+2. [macOS](macOS)
 3. [Manual Installation](https://github.com/tushara04/YSP_Day1/blob/main/Manual-Installations.md): if the script does not work for you for some reason, or you have some other OS installed, you can run a manual installation, which provides a checklist for all the software and packages to be installed.
 
 ### Windows
@@ -21,7 +21,7 @@ To run the setup script on your Windows system:
 Invoke-WebRequest -Uri "https://raw.githubusercontent.com/tushara04/YSP_Day1/refs/heads/main/windows/script.bat" -OutFile "script.bat"; Start-Process "script.bat"
 ```
 
-### MacOs
+### macOs
 hello
 
 ### Manual Installation
