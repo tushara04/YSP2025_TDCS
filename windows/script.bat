@@ -59,4 +59,10 @@ call python -m pip install --upgrade pip
 call pip install ipython ipykernel
 
 echo.
-echo Amazing! Your laptop is now fully ready for you to do the class exercises. Are you ready???
+echo Amazing! Your laptop is now fully ready for you to do the class exercises. But, where are the exercises? Hmm... let's get them here on your laptop.
+pause
+
+REM clone the repository 
+git clone https://github.com/tushara04/YSP_Day1.git
+cd YSP_Day1.git/notebooks
+code .
