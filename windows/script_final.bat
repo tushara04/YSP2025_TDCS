@@ -62,7 +62,9 @@ echo.
 echo Amazing! Your laptop is now fully ready for you to do the class exercises. But, where are the exercises? Hmm... let's get them here on your laptop.
 pause
 
+powershell -Command "[System.Environment]::SetEnvironmentVariable('PATH', [System.Environment]::GetEnvironmentVariable('PATH', 'Machine') + ';' + [System.Environment]::GetEnvironmentVariable('PATH', 'User'), 'Process')"
 REM clone the repository 
 git clone https://github.com/tushara04/YSP_Day1.git
-cd YSP_Day1.git/notebooks
+cd YSP_Day1/notebooks
 code .
+
