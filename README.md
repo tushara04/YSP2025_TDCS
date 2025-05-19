@@ -18,7 +18,9 @@ To install the applications, follow the instructions mentioned below carefully:
 ```powershell
 Invoke-WebRequest -Uri "https://raw.githubusercontent.com/tushara04/YSP_Day1/refs/heads/main/windows/script.bat" -OutFile "script.bat"; Start-Process "script.bat"
 ```
-To do that, click on the overlaped squares you see on the right edge of the box containing the code: ![image](https://github.com/user-attachments/assets/ff4005bb-9c20-4ea5-8dde-8acf57a135d0)
+To do that, click on the overlaped squares you see on the right edge of the box containing the code: 
+![image](https://github.com/user-attachments/assets/ff4005bb-9c20-4ea5-8dde-8acf57a135d0)
+
 2. **Open PowerShell**
 Click on the Windows key on your keyboard and type "powershell". Press the "Enter" key on your keyboard.
 3. **Paste the copied code**
