@@ -9,7 +9,7 @@
 First, identify your computer's operation system (OS). Click on whatever OS you are running on:
 1. [Windows](https://github.com/tushara04/YSP_Day1/blob/main/README.md#windows)
 2. [MacOS](https://github.com/tushara04/YSP_Day1/blob/main/README.md#macos)
-3. Perform Manual Installation
+3. Manual Installation: if the script does not work for you for some reason, or you have some other OS installed, you can run the Manual Installation, which provides a checklist for all the software and packages to be installed.
 
 ### Windows
 To run the setup script on your Windows system:
