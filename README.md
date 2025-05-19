@@ -7,8 +7,8 @@
 ---
 ## Instructions
 First, identify your computer's operation system (OS). Click on whatever OS you are running on:
-1. Windows
-2. MacOS
+1. [Windows](https://github.com/tushara04/YSP_Day1/blob/main/README.md#windows)
+2. [MacOS](https://github.com/tushara04/YSP_Day1/blob/main/README.md#macos)
 3. Perform Manual Installation
 
 ### Windows
