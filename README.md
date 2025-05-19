@@ -1,9 +1,8 @@
 <h1 style="text-align:center;">YSP Day 1 System Setup</h1>
-
----
 <p style="text-align:center;">Hey, there! Welcome to YSP 2025! </p>
 <p style="text-align:center;"> This guide is designed for you to help you install some applications you will need for successfully completing the class exercises over these seven days. Follow the instructions as stated below. If you get stuck somewhere, reach out to your instructors.</p>
 
+---
 ## Instructions
 First, identify your computer's operation system (OS). Click on whatever OS you are running on:
 1. Windows
