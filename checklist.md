@@ -1,5 +1,6 @@
 - [ ] fix the README.md file
 - [ ] edit the manual installations file to add instructions for macos -- might need access to macos -- so do it in the morning
+- [ ] add a checklist for all the software they must have installed -- just create an extra file that does that. just edit this once done, i guess.
 - [ ] go through all the content -- study it to teach them -- go through the slides
 - [ ] make a dir for challenge cards -- talk to roshni in the morning and set it up if needed
 - [ ] add one for ubuntu
