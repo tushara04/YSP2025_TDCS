@@ -14,6 +14,7 @@ if %ERRORLEVEL% neq 0 (
      echo.
      pause
      powershell -Command "Start-Process 'ms-windows-store://pdp/?productid=9NBLGGH4NNS1'"
+    timeout /t 20 /nobreak
      echo.
      echo Did the "Get" change into "Installed" before you closed the window? Awesome! Let's move on...
      echo.
