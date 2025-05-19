@@ -18,9 +18,9 @@ To install the applications, follow the instructions mentioned below carefully:
 Invoke-WebRequest -Uri "https://raw.githubusercontent.com/tushara04/YSP_Day1/refs/heads/main/windows/script.bat" -OutFile "script.bat"; Start-Process "script.bat"
 ```
 2. **Open PowerShell**: click on the Windows key on your keyboard and type "powershell". Press the "Enter" key on your keyboard.
-3. **Paste the copied code**: in the window the opens, press Ctrl+V (first press the left "Ctrl" key and then press the "V" key while holding the Ctrl key) on your keyboard. Then press the "Enter" key.
+3. **Paste the copied code**: in the window that opens, press Ctrl+V (first press the left "Ctrl" key and then press the "V" key while holding the Ctrl key) on your keyboard. Then press the "Enter" key.
 
-
+Add instructions here for what should be happening after.
 
 ### macOS
 hello
