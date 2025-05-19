@@ -13,7 +13,8 @@ First, identify your computer's operation system (OS) from the list below and cl
 
 ### Windows
 To install the applications, follow the instructions mentioned below carefully:
-1. **Copy the code written below**: to do that, click on the overlaped squares you see on the right edge of the box containing the code:
+1. **Copy the code written below**
+click on the overlaped squares you see on the right edge of the box containing the code:
 ![image](https://github.com/user-attachments/assets/ff4005bb-9c20-4ea5-8dde-8acf57a135d0)
 ```powershell
 Invoke-WebRequest -Uri "https://raw.githubusercontent.com/tushara04/YSP_Day1/refs/heads/main/windows/script.bat" -OutFile "script.bat"; Start-Process "script.bat"
