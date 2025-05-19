@@ -11,6 +11,7 @@ First, identify your computer's operation system (OS). Click on whatever OS you 
 2. MacOS
 3. Perform Manual Installation
 
+### Windows
 To run the setup script on your Windows system:
 
 4. Press `Win + X`, then select **Windows PowerShell** (or **Terminal**) from the menu.
@@ -20,6 +21,11 @@ To run the setup script on your Windows system:
 Invoke-WebRequest -Uri "https://raw.githubusercontent.com/tushara04/YSP_Day1/refs/heads/main/windows/script.bat" -OutFile "script.bat"; Start-Process "script.bat"
 ```
 
+### MacOs
+hello
+
+### Manual Installation
+there
 
 ### Not working or stuck somewhere?
 Reach out to your instructors! They are right there. 
