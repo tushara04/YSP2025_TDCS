@@ -12,14 +12,20 @@ First, identify your computer's operation system (OS) from the list below and cl
 3. [Manual Installation](https://github.com/tushara04/YSP_Day1/blob/main/Manual-Installations.md): if the script does not work for you for some reason, or you have some other OS installed, you can run a manual installation, which additionally provides a checklist for all the software and packages to be installed.
 
 ### Windows
-To run the setup script on your Windows system:
-
-4. Press `Win + X`, then select **Windows PowerShell** (or **Terminal**) from the menu.
-5. In the PowerShell window that opens, copy and paste the following command and press **Enter**:
+To install the applications, follow the instructions mentioned below carefully:
+1. **Copy the code written below**
 
 ```powershell
 Invoke-WebRequest -Uri "https://raw.githubusercontent.com/tushara04/YSP_Day1/refs/heads/main/windows/script.bat" -OutFile "script.bat"; Start-Process "script.bat"
 ```
+To do that, click on the overlaped squares you see on the right:
+![image](https://github.com/user-attachments/assets/ac23c05f-b403-4c6a-8757-faa200d94fab)
+2. **Open PowerShell**
+Click on the Windows key on your keyboard and type "powershell". Press the "Enter" key on your keyboard.
+3. **Paste the copied code**
+In the window the opens, press Ctrl+V (first press the left "Ctrl" key and then press the "V" key while holding the Ctrl key) on your keyboard. Then press the "Enter" key.
+
+
 
 ### macOS
 hello
