@@ -33,19 +33,19 @@ log_success() {
 install_core_dependencies() {
     log_info "Setting up core dependencies..."
 
-    if ! type -a xcode-select > /dev/null 2>&1; then
-        log_info "Installing Xcode Command Line Tools..."
-        xcode-select --install &>/dev/null
-        until xcode-select -p &>/dev/null; do sleep 5; done
-        log_success "Xcode installed."
-    fi
+    # if ! type -a xcode-select > /dev/null 2>&1; then
+    #     log_info "Installing Xcode Command Line Tools..."
+    #     xcode-select --install &>/dev/null
+    #     until xcode-select -p &>/dev/null; do sleep 5; done
+    #     log_success "Xcode installed."
+    # fi
 
-    if ! type -a brew > /dev/null 2>&1; then
-        log_info "Installing Homebrew..."
-        /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-        eval "$(/opt/homebrew/bin/brew shellenv)"
-        log_success "Homebrew installed."
-    fi
+    # if ! type -a brew > /dev/null 2>&1; then
+    #     log_info "Installing Homebrew..."
+    #     /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+    #     eval "$(/opt/homebrew/bin/brew shellenv)"
+    #     log_success "Homebrew installed."
+    # fi
 
     log_info "Updating and upgrading Homebrew..."
     brew update && brew upgrade
@@ -57,28 +57,42 @@ setup_environment_and_shell() {
     log_success "Brew packages installed."
 }
 # Applies user-preferred configurations and settings to MacOS.
-function apply_macos_configurations() {
-    # Set macOS preferences - we will run this last because this will reload the shell
-    echo -e "\\n${YELLOW}[INFO] Applying MacOS configurations...${NC}"
+# function apply_macos_configurations() {
+#     # Set macOS preferences - we will run this last because this will reload the shell
+#     echo -e "\\n${YELLOW}[INFO] Applying MacOS configurations...${NC}"
 
-    source "$DIR/macos.sh"
-    log_success "MacOS configurations applied."
-}
+#     source "$DIR/macos.sh"
+#     log_success "MacOS configurations applied."
+# }
+
+# Install Python + IPython via Homebrew and ipykernel via pip
+log_info "Installing Python and Jupyter kernel tools..."
+brew install python ipython
+if command -v pip3 >/dev/null 2>&1; then
+    pip3 install ipykernel
+    log_success "Installed ipykernel via pip3."
+else
+    log_error "pip3 not found. Python installation may have failed."
+fi
+
+# log_success "macos.sh completed."
+
+
 
 # Check the provided options and perform the corresponding actions
 if [ "$flag_update" = on ]; then
     setup_environment_and_shell
 elif [ "$flag_config" = on ]; then
-    apply_macos_configurations
+    # apply_macos_configurations
 elif [ "$flag_install" = on ]; then
     install_core_dependencies
     setup_environment_and_shell
-    apply_macos_configurations
+    # apply_macos_configurations
 else
     # Same behaviour as `$flag_install` now; can be extended later
     install_core_dependencies
     setup_environment_and_shell
-    apply_macos_configurations
+    # apply_macos_configurations
 fi
 
 # After setup, clone repo, go to notebooks, and open VS Code
