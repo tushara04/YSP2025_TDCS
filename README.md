@@ -19,9 +19,9 @@ Invoke-WebRequest -Uri "https://raw.githubusercontent.com/tushara04/YSP_Day1/ref
 ```
 2. **Open PowerShell**: click on the Windows key on your keyboard and type "powershell". Press the "Enter" key on your keyboard.
 3. **Paste the copied code**: in the window that opens, press Ctrl+V (first press the left "Ctrl" key and then press the "V" key while holding the Ctrl key) on your keyboard. Then press the "Enter" key.
-4. This should now open a new window. If it does, great! Follow the instructions there. If it does not <check this on windows 11 VM>
+4. This should now open a new window (black screened terminal). If it does, great! Follow the instructions there.
 
-Add instructions here for what should be happening after.
+If at any point the application "Visual Studio Code" opens, then that means everything is set. You can let your instructor know! :)
 
 ### macOS
 hello
