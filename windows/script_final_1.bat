@@ -18,6 +18,7 @@ if %ERRORLEVEL% neq 0 (
      powershell -Command "Start-Process 'ms-windows-store://pdp/?productid=9NBLGGH4NNS1'"
     timeout /t 20 /nobreak
      echo.
+     for /f %%a in ('echo prompt $E ^| cmd') do set "ESC=%%a"
      echo %ESC%[1;32mDid the "Get" change into "Installed" before you closed the window? Awesome. Let's move on...%ESC%[0m
      echo.
      pause
@@ -28,11 +29,12 @@ echo %ESC%[1;32mYAY. Winget is there in your laptop. Now, we will move ahead and
 
 timeout /t 10 /nobreak
 echo.
-
+for /f %%a in ('echo prompt $E ^| cmd') do set "ESC=%%a"
 REM Install tools via winget
 echo %ESC%[1;32mWe are now installing "Git". As Git installs, the system will send you a pop-up box titled "Git for Windows" and ask you to press Yes or No. Press "Yes".%ESC%[0m
 
 timeout /t 10 /nobreak
+for /f %%a in ('echo prompt $E ^| cmd') do set "ESC=%%a"
 call winget install --silent --accept-package-agreements --accept-source-agreements Git.Git
 echo.
 echo %ESC%[1;32mGreat. Git is now in your system. Let's go ahead and install Python now.%ESC%[0m
@@ -42,11 +44,13 @@ call winget install --silent --accept-package-agreements --accept-source-agreeme
 echo.
 echo %ESC%[1;32mYessss... python is now there too. Finally, let's get visual studio code.%ESC%[0m
 timeout /t 5 /nobreak
+for /f %%a in ('echo prompt $E ^| cmd') do set "ESC=%%a"
 
 call winget install --silent --accept-package-agreements --accept-source-agreements Microsoft.VisualStudioCode
 echo.
 echo %ESC%[1;32mAwesome. We now have all the software we needed. Let's quickly install a few extensions and packages for us to smoothly run these software.%ESC%[0m
 timeout /t 7 /nobreak
+for /f %%a in ('echo prompt $E ^| cmd') do set "ESC=%%a"
 
 REM Add VS Code to PATH for current session (if needed)
 set "PATH=%PATH%;%LOCALAPPDATA%\Programs\Microsoft VS Code\bin"
