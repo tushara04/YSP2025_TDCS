@@ -11,6 +11,7 @@ First, identify your computer's operation system (OS) from the list below and cl
 1. [Windows](#windows) ([Manual Installation](https://github.com/tushara04/YSP_Day1/blob/main/manual_installations/windows.md))
 2. [macOS](#macOS) ([Manual Installation](https://github.com/tushara04/YSP_Day1/blob/main/manual_installations/macOS.md))
 
+---
 ### Windows
 To install the applications, follow the instructions mentioned below carefully:
 1. **Copy the code written below**: click on the overlaped squares you see on the right edge of the box below that contains the code: ![image](https://github.com/user-attachments/assets/ff4005bb-9c20-4ea5-8dde-8acf57a135d0)
@@ -23,11 +24,12 @@ Invoke-WebRequest -Uri "https://raw.githubusercontent.com/tushara04/YSP_Day1/ref
 
 If at any point the application "Visual Studio Code" opens, then that means everything is set. You can let your instructor know! :)
 
+---
 ### macOS
 hello
 
-### Manual Installation
-there
-
+---
 ### Not working or stuck somewhere?
 Reach out to your instructors! They are right there. 
+
+---
