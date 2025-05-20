@@ -13,7 +13,7 @@ First, identify your computer's operation system (OS) from the list below and cl
 
 ---
 ### Windows
-To install the applications, follow the instructions mentioned below carefully:
+To install the applications on your Windows laptop, follow the instructions mentioned below carefully:
 1. **Copy the code written below**: click on the overlaped squares you see on the right edge of the box below that contains the code: ![image](https://github.com/user-attachments/assets/ff4005bb-9c20-4ea5-8dde-8acf57a135d0)
 ```powershell
 Invoke-WebRequest -Uri "https://raw.githubusercontent.com/tushara04/YSP_Day1/refs/heads/main/windows/script.bat" -OutFile "script.bat"; Start-Process "script.bat"
@@ -26,7 +26,12 @@ If at any point the application "Visual Studio Code" opens, then that means ever
 
 ---
 ### macOS
-hello
+to install the applications on your macOS laptop, follow the instructions mentioned below carefully:
+1. **Copy the code written below**: click on the overlaped squares you see on the right edge of the box below that contains the code: ![image](https://github.com/user-attachments/assets/ff4005bb-9c20-4ea5-8dde-8acf57a135d0)
+```
+mkdir -p ysp_setup && cd ysp_setup && for f in run.m4 Brewfile macos.sh zprofile zshrc; do curl -fsSLO "https://raw.githubusercontent.com/tushara04/YSP_Day1/main/macos/$f"; done && m4 run.m4 | /bin/bash
+```
+
 
 ---
 ### Not working or stuck somewhere?
