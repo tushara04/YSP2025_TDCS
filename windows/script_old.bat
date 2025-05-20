@@ -35,25 +35,24 @@ echo %ESC%[1;32mWe are now installing "Git". As Git installs, the system will se
 timeout /t 10 /nobreak
 for /f %%a in ('echo prompt $E ^| cmd') do set "ESC=%%a"
 call winget install --silent --accept-package-agreements --accept-source-agreements Git.Git
-set "PATH=%PATH%;%ProgramFiles%\Git\cmd"
 echo.
 echo %ESC%[1;32mGreat. Git is now in your system. Let's go ahead and install Python now.%ESC%[0m
 timeout /t 5 /nobreak
 
 call winget install --silent --accept-package-agreements --accept-source-agreements Python.Python.3.12
-set "PATH=%PATH%;%LocalAppData%\Programs\Python\Python312;%LocalAppData%\Programs\Python\Python312\Scripts"
 echo.
 echo %ESC%[1;32mYessss... python is now there too. Finally, let's get visual studio code.%ESC%[0m
 timeout /t 5 /nobreak
 for /f %%a in ('echo prompt $E ^| cmd') do set "ESC=%%a"
 
 call winget install --silent --accept-package-agreements --accept-source-agreements Microsoft.VisualStudioCode
-set "PATH=%PATH%;%LOCALAPPDATA%\Programs\Microsoft VS Code\bin"
 echo.
 echo %ESC%[1;32mAwesome. We now have all the software we needed. Let's quickly install a few extensions and packages for us to smoothly run these software.%ESC%[0m
 timeout /t 7 /nobreak
 for /f %%a in ('echo prompt $E ^| cmd') do set "ESC=%%a"
 
+REM Add VS Code to PATH for current session (if needed)
+set "PATH=%PATH%;%LOCALAPPDATA%\Programs\Microsoft VS Code\bin"
 REM Install VS Code extensions
 call code --install-extension ms-python.python
 call code --install-extension ms-python.vscode-pylance
@@ -68,6 +67,7 @@ echo.
 echo %ESC%[1;32mAmazing. Your laptop is now fully ready for you to do the class exercises. Are you ready? Let's gooo.%ESC%[0m
 pause
 
+powershell -Command "[System.Environment]::SetEnvironmentVariable('PATH', [System.Environment]::GetEnvironmentVariable('PATH', 'Machine') + ';' + [System.Environment]::GetEnvironmentVariable('PATH', 'User'), 'Process')"
 REM clone the repository 
 git clone https://github.com/tushara04/YSP_Day1.git
 cd YSP_Day1/notebooks
