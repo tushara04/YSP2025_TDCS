@@ -17,7 +17,6 @@ if %ERRORLEVEL% neq 0 (
      echo.
      pause
      powershell -Command "Start-Process 'ms-windows-store://pdp/?productid=9NBLGGH4NNS1'"
-     for /f %%a in ('echo prompt $E ^| cmd') do set "ESC=%%a"
      echo.
      echo %ESC%[1;32mDid the "Get" change into "Installed" before you closed the window? Awesome. Let's move on...%ESC%[0m
      echo.
