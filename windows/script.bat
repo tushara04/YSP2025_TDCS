@@ -18,7 +18,7 @@ if %ERRORLEVEL% neq 0 (
      pause
      powershell -Command "Start-Process 'ms-windows-store://pdp/?productid=9NBLGGH4NNS1'"
      echo.
-     echo %ESC%[1;32mDid the "Get" change into "Installed" before you closed the window? Awesome. Let's move on...%ESC%[0m
+     echo %ESC%[1;32mDid the "Get" change into "Installed" before you closed the window? Awesome. Let's move on. You might have to wait for a few seconds before you can press any key.%ESC%[0m
      echo.
      pause
 )    
