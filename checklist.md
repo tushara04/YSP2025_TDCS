@@ -9,3 +9,5 @@
 7. vscode: pylance
 8. pip ipykernel
 9. pip ipython
+
+If you are running any other OS, other than Windows or Mac, then use the respective commands and package managers to install these packages. Reach out to the instructors if you need help!
