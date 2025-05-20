@@ -1,6 +1,11 @@
-- [ ] fix the README.md file
-- [ ] edit the manual installations file to add instructions for macos -- might need access to macos -- so do it in the morning
-- [ ] add a checklist for all the software they must have installed -- just create an extra file that does that. just edit this once done, i guess.
-- [ ] go through all the content -- study it to teach them -- go through the slides
-- [ ] make a dir for challenge cards -- talk to roshni in the morning and set it up if needed
-- [ ] add one for ubuntu
+## Whether or not you ran a manual installation process, you must have installed the following packages: 
+
+1. Git
+2. Microsoft Visual Studio Code
+3. Python 3.12
+4. vscode: jupyter
+5. vscode: python
+6. vscode: serial-monitor
+7. vscode: pylance
+8. pip ipykernel
+9. pip ipython
