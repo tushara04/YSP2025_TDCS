@@ -1,4 +1,4 @@
-## Whether or not you ran a manual installation process, you must have installed the following packages: 
+## Whether or not you ran a manual installation process, you must have at least installed the following packages: 
 
 1. Git
 2. Microsoft Visual Studio Code
