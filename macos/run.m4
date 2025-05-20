@@ -81,4 +81,14 @@ else
     apply_macos_configurations
 fi
 
+# After setup, clone repo, go to notebooks, and open VS Code
+log_info "Cloning YSP_Day1 repository..."
+git clone https://github.com/tushara04/YSP_Day1.git
+log_success "Repository cloned."
+
+cd YSP_Day1/notebooks || exit 1
+log_info "Opening Visual Studio Code in notebooks directory..."
+code .
+log_success "VS Code opened."
+
 # ] <-- needed because of Argbash
