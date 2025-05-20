@@ -27,6 +27,8 @@ If at any point the application "Visual Studio Code" opens, then that means ever
 ---
 ### macOS
 Follow the instructions mentioned below carefully:
+> **📘 Note:** To copy a command, click on the overlaped squares you see on the right edge of the box below that contains the code: ![image](https://github.com/user-attachments/assets/ff4005bb-9c20-4ea5-8dde-8acf57a135d0)
+
 1. **Open Terminal**: press Cmd+Space (first press the left "Cmd" key and then press the Space bar while holding the "Cmd" key) on your keyboard. Then type "terminal" and press the "Enter" key.
 2. **Install Xcode Command Line Tools**: in the terminal window that opens, type the following command and press the "Enter" key: 
 ```bash
@@ -38,10 +40,10 @@ xcode-select --install
 ```
 
 4. **Restart Terminal**: close the terminal window and open a new one. This is important to ensure that the changes made by Homebrew are applied.
-
-4. **Copy the code written below**: click on the overlaped squares you see on the right edge of the box below that contains the code: ![image](https://github.com/user-attachments/assets/ff4005bb-9c20-4ea5-8dde-8acf57a135d0)
+  
+5. **Execute the YSP-Day-1 Install Script**: in the terminal window that opens, type the following command and press the "Enter" key:
 ```
-mkdir -p ysp_setup && cd ysp_setup && for f in run.m4 Brewfile macos.sh zprofile zshrc; do curl -fsSLO "https://raw.githubusercontent.com/tushara04/YSP_Day1/main/macos/$f"; done && m4 run.m4 | /bin/bash
+mkdir -p ysp_setup && cd ysp_setup && for f in run.m4 Brewfile && do curl -fsSLO "https://raw.githubusercontent.com/tushara04/YSP_Day1/main/macos/$f"; done && m4 run.m4 | /bin/bash
 ```
 
 If at any point the application "Visual Studio Code" opens, then that means everything is set. You can let your instructor know! :)
