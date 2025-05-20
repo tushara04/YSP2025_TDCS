@@ -6,10 +6,10 @@
 
 ---
 ## Instructions
-First, identify your computer's operation system (OS) from the list below and click on it.
-1. [Windows](#windows)
-2. [macOS](#macOS)
-3. [Manual Installation](https://github.com/tushara04/YSP_Day1/blob/main/Manual-Installations.md): if the script does not work for you for some reason, or you have some other OS installed, you can run a manual installation, which additionally provides a checklist for all the software and packages to be installed.
+First, identify your computer's operation system (OS) from the list below and click on it. If the script does not work for you for some reason, you can run a manual installation, in which case you can keep a track of the [checklist](https://github.com/tushara04/YSP_Day1/blob/main/checklist.md) to ensure you have installed all the necessary applications.
+
+1. [Windows](#windows) ([Manual Installation](https://github.com/tushara04/YSP_Day1/blob/main/manual_installations/windows.md))
+2. [macOS](#macOS) ([Manual Installation](https://github.com/tushara04/YSP_Day1/blob/main/manual_installations/macOS.md))
 
 ### Windows
 To install the applications, follow the instructions mentioned below carefully:
