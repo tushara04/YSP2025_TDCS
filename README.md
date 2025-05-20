@@ -30,6 +30,6 @@ hello
 
 ---
 ### Not working or stuck somewhere?
-Reach out to your instructors! They are right there. 
+Reach out to your instructors! They are right there. Or, schedule and come for office hours!
 
 ---
