@@ -18,8 +18,8 @@ To install the applications on your Windows laptop, follow the instructions ment
 ```powershell
 Invoke-WebRequest -Uri "https://raw.githubusercontent.com/tushara04/YSP_Day1/refs/heads/main/windows/script.bat" -OutFile "script.bat"; Start-Process "script.bat"
 ```
-2. **Open PowerShell**: click on the Windows key on your keyboard and type "powershell". Press the "Enter" key on your keyboard.
-3. **Paste the copied code**: in the window that opens, press Ctrl+V (first press the left "Ctrl" key and then press the "V" key while holding the Ctrl key) on your keyboard. Then press the "Enter" key.
+2. **Open PowerShell**: press the Windows key on your keyboard and type "powershell". Press the "Enter" key on your keyboard.
+3. **Paste the copied code**: in the window that opens, press Ctrl+V (first press the left "Ctrl" key and then press the "V" key while holding the "Ctrl" key) on your keyboard. Then press the "Enter" key.
 4. This should now open a new window (black screened terminal). If it does, great! Follow the instructions there.
 
 If at any point the application "Visual Studio Code" opens, then that means everything is set. You can let your instructor know! :)
@@ -31,7 +31,11 @@ to install the applications on your macOS laptop, follow the instructions mentio
 ```
 mkdir -p ysp_setup && cd ysp_setup && for f in run.m4 Brewfile macos.sh zprofile zshrc; do curl -fsSLO "https://raw.githubusercontent.com/tushara04/YSP_Day1/main/macos/$f"; done && m4 run.m4 | /bin/bash
 ```
+2. **Open Terminal**: press Cmd+Space (first press the left "Cmd" key and then press the Space bar while holdig the "Cmd" key) on your keyboard. Then press the "Enter" key.
+3. **Paste the copied code:** in the window that opens, right click with your touchpad/mouse and click on "Paste". Then press the "Enter" key.
+4. This should now run a bunch of commands on your terminal. Pay attention to it, and if there are instructions given, follow them!
 
+If at any point the application "Visual Studio Code" opens, then that means everything is set. You can let your instructor know! :)
 
 ---
 ### Not working or stuck somewhere?
