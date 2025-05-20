@@ -75,7 +75,7 @@ else
     log_error "pip3 not found. Python installation may have failed."
 fi
 
-log_success "macos.sh completed."
+# log_success "macos.sh completed."
 
 
 

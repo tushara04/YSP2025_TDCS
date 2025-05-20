@@ -43,7 +43,7 @@ xcode-select --install
   
 5. **Execute the YSP-Day-1 Install Script**: in the terminal window that opens, type the following command and press the "Enter" key:
 ```
-mkdir -p ysp_setup && cd ysp_setup && for f in run.m4 Brewfile && do curl -fsSLO "https://raw.githubusercontent.com/tushara04/YSP_Day1/main/macos/$f"; done && m4 run.m4 | /bin/bash
+mkdir -p ysp_setup && cd ysp_setup && for f in run.m4 Brewfile; do curl -fsSLO "https://raw.githubusercontent.com/tushara04/YSP_Day1/main/macos/$f"; done && m4 run.m4 | /bin/bash
 ```
 
 If at any point the application "Visual Studio Code" opens, then that means everything is set. You can let your instructor know! :)
