@@ -35,6 +35,7 @@ ls
 
 Great, you are in the directory on VS Code! Have fun doing the exercises.
 
+---
 ## Day 1: 20th May 2025
 This guide is to help you install some applications you will need for the class exercises over the next seven days. Follow the instructions below. If you get stuck, reach out to your instructors.
 
