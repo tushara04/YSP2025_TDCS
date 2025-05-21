@@ -1,16 +1,52 @@
 <div align="center">
-  <h1>YSP Day 1 System Setup</h1>
+  <h1>YSP TDCS Repository</h1>
   <p>Hey, there! Welcome to YSP 2025!</p>
-  <p>This guide is designed to help you install some applications you will need for the class exercises over the next seven days. Follow the instructions below. If you get stuck, reach out to your instructors.</p>
+  <p>This guide is designed to help you navigate through the requirements of each class.</p>
 </div>
 
 ---
-## Instructions
+## Day 2: 21st May 2025
+Before you follow the instructions for class 2, please make sure you have met all the requirements we covered in the first class. To confirm this, head to the [checklist](https://github.com/tushara04/YSP_Day1/blob/main/checklist.md). Come back here when you have checked everything!
+
+Now that we are set, let's update the repository with the new notebook files we uploaded!
+1. First open the terminal:
+- If you are on Windows, press Windows + X and look for PowerShell. 
+- If you are on macOS, press Cmd + Space and search for Terminal.
+2. In the terminal/PowerShell that opened, type:
+```
+ls
+```
+3. You must see a lot of folders. You are in the Home directory right now. Let's navigate to the Documents folder. In the terminal/PowerShell, type:
+```
+cd Documents
+```
+4. The path on your terminal/Powershell must be updated from ~ to Documents.
+5. Now, clone the repository again. Moving forward, for all our class exercises, we will navigate to Documents, then to the directory of our repository, and then to the notebooks.
+6. To clone the GitHub repo, on your terminal/PowerShell, paste the following. Make sure you are on the Documents folder!
+```
+git clone https://github.com/tushara04/YSP_Day1.git
+```
+7. Then, on the terminal/PowerShell, type:
+```
+ls
+```
+8. You must see a list of all the folders in the Documents folder. Look for YSP_Day1. If you see it there, great job! If not, reach out to your instructors!
+9. Open Visual Studio Code and open the YSP_Day1 folder. Then navigate as follows: notebooks > day2.
+
+Great, you are in the directory on VS Code! Have fun doing the exercises.
+
+## Day 1: 20th May 2025
+This guide is to help you install some applications you will need for the class exercises over the next seven days. Follow the instructions below. If you get stuck, reach out to your instructors.
+
+### Instructions
 First, identify your computer's operation system (OS) from the list below and click on it. If the script does not work for you for some reason, you can run a manual installation, in which case you can keep a track of the [checklist](https://github.com/tushara04/YSP_Day1/blob/main/checklist.md) to ensure you have installed all the necessary applications.
 
-1. [Windows](#windows) ([Manual Installation](https://github.com/tushara04/YSP_Day1/blob/main/manual_installations/windows.md))
-2. [macOS](#macOS) ([Manual Installation](https://github.com/tushara04/YSP_Day1/blob/main/manual_installations/macOS.md))
+1. [Windows](#windows)
+2. [macOS](#macOS)
 
+If you prefer manual installation, visit the link below:
+1. [Windows](https://github.com/tushara04/YSP_Day1/blob/main/manual_installations/windows.md)
+2. [macOS](https://github.com/tushara04/YSP_Day1/blob/main/manual_installations/macOS.md)
 ---
 ### Windows
 To install the applications on your Windows laptop, follow the instructions mentioned below carefully:
@@ -53,3 +89,4 @@ If at any point the application "Visual Studio Code" opens, then that means ever
 Reach out to your instructors! They are right there. Or, schedule and come for office hours!
 
 ---
+
