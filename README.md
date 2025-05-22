@@ -5,6 +5,20 @@
 </div>
 
 ---
+## Day 3: 22nd May 2025
+Before you follow the instructions for class 3, please make sure you have met all the requirements we covered in the second class. To check, open terminal, navigate to the Documents directory, then look for "YSP_Day1" folder. If you find it, continue with the instructions stated below. Otherwise, go back to instructions of the earlier days.
+
+For today's class, we updated the repository and added new notebooks, challenge cards, and some reading materials. But to update the clone repository on your laptop, we need to run some commands.
+
+1. Open terminal/PowerShell on your laptop.
+2. Find and navigate to the "YSP_Day1" folder we cloned yesterday. 
+3. Once you are in "YSP_Day1" (the ~ must have changed to "YSP_Day1"), run:
+```
+git pull
+```
+4. The terminal/PowerShell must output 
+
+---
 ## Day 2: 21st May 2025
 Before you follow the instructions for class 2, please make sure you have met all the requirements we covered in the first class. To confirm this, head to the [checklist](https://github.com/tushara04/YSP_Day1/blob/main/checklist.md). Come back here when you have checked everything!
 
