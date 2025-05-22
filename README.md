@@ -29,7 +29,8 @@ If that works, Visual Studio Code must have opened with the updated YSP_Day1 dir
 If you do not have your laptop with you, or an OS that supports all these processes we carried out, then follow these steps:
 1. Go to [notebooks](https://github.com/tushara04/YSP2025_TDCS/tree/main/notebooks).
 2. Go to a specific day's folder whose notebook you want to solve.
-3. Download notebook: to do that, open the notebook by clicking on it, and then on the right side of the screen, you should see this icon: ![image](./assets/downloads_on_github.jpeg)
+3. Download notebook: to do that, open the notebook by clicking on it, and then on the right side of the screen, you should see this icon: 
+![image](./assets/downloads_on_github.jpeg)
 4. After the file downloads, go to [Colab](https://colab.research.google.com/).
 5. On the top left corner, you should see "File". Click on that, then in the dialog box that opens, click on "Upload notebook" then "Browse", and find the notebook you downloaded in the Downloads folder, or wherever your downloads get saved.
 
