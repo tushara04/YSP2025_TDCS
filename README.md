@@ -22,7 +22,9 @@ git pull
 code .
 ```
 If that works, Visual Studio Code must have opened with the updated YSP_Day1 directory. If it does not work, open Visual Studio Code yourself, then click on "File" on the top left corner, click on "Open Folder", and find the YSP_Day1 folder in the Documents folder (where you saved in the second class).
+
 6. There must be now be new folders for reading materials, challenge cards, and day3 notebooks.
+
 
 ---
 ## Day 2: 21st May 2025
