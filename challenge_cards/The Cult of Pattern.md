@@ -6,6 +6,7 @@
 You have just found a coded ritual pattern in an old manuscript. If you print it exactly for n = 5, it reveals the hidden symbol of an ancient cult.
 The pattern looks like:
 
+```
 *       *
  *     * 
   *   *  
@@ -15,6 +16,7 @@ The pattern looks like:
   *   *  
  *     * 
 *       *
+```
 
 **Challenge:**
 1. Recreate this by coding using loops.
