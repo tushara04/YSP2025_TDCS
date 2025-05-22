@@ -17,11 +17,12 @@ For today's class, we updated the repository and added new notebooks, challenge 
 git pull
 ```
 4. The terminal/PowerShell must output the changes made to your directory.
-5. Now, type: 
+5. Now, in the same terminal/PowerShell, type: 
 ```
 code .
 ```
 If that works, Visual Studio Code must have opened with the updated YSP_Day1 directory. If it does not work, open Visual Studio Code yourself, then click on "File" on the top left corner, click on "Open Folder", and find the YSP_Day1 folder in the Documents folder (where you saved in the second class).
+
 6. There must be now be new folders for reading materials, challenge cards, and day3 notebooks.
 
 ---
