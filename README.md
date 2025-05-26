@@ -5,6 +5,10 @@
 </div>
 
 ---
+## Day 4: 26th May 2025
+Assuming you have followed the instructions of the last three days and you have the repository clones on your laptop in the Documents folder, navigate to that folder, and then run `git pull` to update the repository. Then open Visual Studio Code either through `code .` or by manually opening the application and navigating to the folder. 
+
+---
 ## Day 3: 22nd May 2025
 Before you follow the instructions for class 3, please make sure you have met all the requirements we covered in the second class. To check, open terminal, navigate to the Documents directory, then look for "YSP_Day1" folder. If you find it, continue with the instructions stated below. Otherwise, go back to instructions of the earlier days.
 
