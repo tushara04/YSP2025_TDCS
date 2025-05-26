@@ -6,7 +6,7 @@
 
 ---
 ## Day 4: 26th May 2025
-Assuming you have followed the instructions of the last three days and you have the repository clones on your laptop in the Documents folder, navigate to that folder, and then run `git pull` to update the repository. Then open Visual Studio Code either through `code .` or by manually opening the application and navigating to the folder. 
+Assuming you have followed the instructions of the last three days and you have the repository cloned on your laptop in the Documents folder, navigate to that folder (YSP2025_TDCS), and then run `git pull` to update the repository. Then open Visual Studio Code either through `code .` or by manually opening the application and navigating to the folder. 
 
 ---
 ## Day 3: 22nd May 2025
