@@ -8,12 +8,10 @@
 
 DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 
-# Argbash workaround for square brackets:
-# https://web.archive.org/web/20230927170347/https://argbash.readthedocs.io/en/latest/#limitations
-GREEN='\033[0;32m'    # match square bracket for argbash: ]
-YELLOW='\033[1;33m'   # match square bracket for argbash: ]
-RED='\033[0;31m'      # match square bracket for argbash: ]
-NC='\033[0m'          # match square bracket for argbash: ]
+GREEN='\033[0;32m'# match square bracket for argbash: ]
+YELLOW='\033[1;33m'# match square bracket for argbash: ]
+RED='\033[0;31m'# match square bracket for argbash: ]
+NC='\033[0m'# match square bracket for argbash: ]
 
 # Track failures
 declare -a FAILURES=()
@@ -173,9 +171,11 @@ setup_environment_and_shell() {
         brew bundle --file ./Brewfile.tmp
         rm ./Brewfile.tmp
     else
-        # Install everything from Brewfile
-        brew bundle --file ./Brewfile
+        log_info "VS Code not found. Installing as usual"
     fi
+
+    # Install everything from Brewfile
+    brew bundle --file ./Brewfile
 
     # Setup VS Code CLI if needed
     setup_vscode_cli
@@ -239,37 +239,72 @@ else
 fi
 
 # Clone repository
-log_info "Cloning YSP_Day1 repository..."
-if git clone https://github.com/tushara04/YSP_Day1.git 2>/dev/null; then
-    log_success "Repository cloned."
+log_info "Cloning ESP32 Mesh Firmware repository..."
+REPO_DIR="$HOME/Desktop/Makerspace_YSP_ESP32_Mesh"
+if git clone https://github.com/Makerspace-Ashoka/ysp-esp32-mesh-firmware.git "$REPO_DIR" 2>/dev/null; then
+    log_success "Repository cloned to Desktop."
 else
-    if [ -d "YSP_Day1" ]; then
+    if [ -d "$REPO_DIR" ]; then
         log_info "Repository already exists. Pulling latest changes..."
-        cd YSP_Day1 && git pull && cd ..
+        cd "$REPO_DIR" && git pull && cd - >/dev/null
+        log_success "Repository updated."
     else
         log_error "Failed to clone repository"
     fi
 fi
 
-# Open VS Code
-if [ -d "YSP_Day1/notebooks" ]; then
-    cd YSP_Day1/notebooks || {
-        log_error "Could not navigate to notebooks directory"
+# Setup Python environment
+PROJECT_DIR="$REPO_DIR/python-interface/src"
+if [ -d "$PROJECT_DIR" ]; then
+    cd "$PROJECT_DIR" || {
+        log_error "Could not navigate to project directory"
+        exit 1
     }
 
+    log_info "Creating Python virtual environment..."
+    # Detect Python command
+    local python_cmd=$(detect_python)
+    if [ -z "$python_cmd" ]; then
+        python_cmd="python3"
+    fi
+
+    # Create virtual environment
+    "$python_cmd" -m venv .venv
+    if [ $? -eq 0 ]; then
+        log_success "Virtual environment created."
+
+        # Activate virtual environment and install requirements
+        log_info "Installing project requirements..."
+        source .venv/bin/activate
+
+        if [ -f "requirements.txt" ]; then
+            pip install -r requirements.txt
+            if [ $? -eq 0 ]; then
+                log_success "Requirements installed successfully."
+            else
+                log_error "Failed to install some requirements"
+            fi
+        else
+            log_error "requirements.txt not found in $PROJECT_DIR"
+        fi
+    else
+        log_error "Failed to create virtual environment"
+    fi
+
+    # Open VS Code
     if command_exists code; then
         log_info "Opening Visual Studio Code..."
         code .
-        log_success "VS Code opened in notebooks directory."
+        log_success "VS Code opened in project directory."
     elif is_vscode_installed; then
         log_info "Opening VS Code via open command..."
         open -a "Visual Studio Code" .
-        log_success "VS Code opened in notebooks directory."
+        log_success "VS Code opened in project directory."
     else
         log_error "VS Code not available"
     fi
 else
-    log_error "notebooks directory not found"
+    log_error "Project directory not found: $PROJECT_DIR"
 fi
 
 # Report any failures

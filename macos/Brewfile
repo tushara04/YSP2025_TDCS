@@ -1,6 +1,7 @@
 # command line interface (CLI) tools
 brew "git"
-brew "python@3.12"
+brew "python3"
+brew "ipython"
 
 # graphical user interface (GUI) tools
 cask "visual-studio-code"
