@@ -243,15 +243,16 @@ setup_environment_and_shell() {
     if is_vscode_installed; then
         log_info "VS Code already installed in /Applications. Skipping brew installation."
         # Create a temporary Brewfile without VS Code
-        grep -v "visual-studio-code" ./Brewfile > ./Brewfile.tmp
-        brew bundle --file ./Brewfile.tmp
-        rm ./Brewfile.tmp
+        grep -v "visual-studio-code" "$DIR/Brewfile"> "$DIR/Brewfile.tmp"
+
+        brew bundle --file "$DIR/Brewfile.tmp"
+        rm "$DIR/Brewfile.tmp"
     else
         log_info "VS Code not found. Installing as usual"
     fi
 
     # Install everything from Brewfile
-    brew bundle --file ./Brewfile
+    brew bundle --file "$DIR/Brewfile"
 
     # Setup VS Code CLI if needed
     setup_vscode_cli
