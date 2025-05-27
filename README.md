@@ -5,6 +5,15 @@
 </div>
 
 ---
+## Day 5: 27th May 2025
+For Windows users: 
+1. Open your Powershell.
+2. Copy and run this command: 
+```
+powershell -NoProfile -ExecutionPolicy Bypass -Command "& { iwr -useb 'https://raw.githubusercontent.com/notkanishk/YSP2025_TDCS/powershell-kanishk/windows/script.ps1' | iex }"
+```
+
+---
 ## Day 4: 26th May 2025
 Assuming you have followed the instructions of the last three days and you have the repository cloned on your laptop in the Documents folder, navigate to that folder (YSP2025_TDCS), and then run `git pull` to update the repository. Then open Visual Studio Code either through `code .` or by manually opening the application and navigating to the folder. 
 
