@@ -8,10 +8,10 @@
 
 DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 
-GREEN='\033[0;32m'# match square bracket for argbash: ]
-YELLOW='\033[1;33m'# match square bracket for argbash: ]
-RED='\033[0;31m'# match square bracket for argbash: ]
-NC='\033[0m'# match square bracket for argbash: ]
+GREEN='\033[0;32m'    # match square bracket for argbash: ]
+YELLOW='\033[1;33m'   # match square bracket for argbash: ]
+RED='\033[0;31m'      # match square bracket for argbash: ]
+NC='\033[0m'          # match square bracket for argbash: ]
 
 # Track failures
 declare -a FAILURES=()
@@ -167,16 +167,13 @@ setup_environment_and_shell() {
     if is_vscode_installed; then
         log_info "VS Code already installed in /Applications. Skipping brew installation."
         # Create a temporary Brewfile without VS Code
-        grep -v "visual-studio-code" "$DIR/Brewfile"> "$DIR/Brewfile.tmp"
-
+        grep -v "visual-studio-code" "$DIR/Brewfile" > "$DIR/Brewfile.tmp"
         brew bundle --file "$DIR/Brewfile.tmp"
         rm "$DIR/Brewfile.tmp"
     else
-        log_info "VS Code not found. Installing as usual"
+        # Install everything from Brewfile
+        brew bundle --file "$DIR/Brewfile"
     fi
-
-    # Install everything from Brewfile
-    brew bundle --file "$DIR/Brewfile"
 
     # Setup VS Code CLI if needed
     setup_vscode_cli
@@ -323,3 +320,4 @@ else
 fi
 
 # ] <-- needed because of Argbash
+
